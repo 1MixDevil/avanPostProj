@@ -6,4 +6,4 @@ class New_DataSet(forms.Form):
 
 
 class GetPhotoTest(forms.Form):
-    file = forms.FileField(widget=widgets.FileInput(attrs={'class': 'form-control', 'id': "formFileMultiple"}))
+    file = forms.FileField(widget=widgets.FileInput(attrs={'class': 'form-control', 'id': "formFileMultiple", 'multiple': True}))

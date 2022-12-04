@@ -3,6 +3,24 @@
 
 
 {% block content %}
-        {% block test %} <h2>Your result: {{ res }} </h2>{% endblock %}
+    {% block test %}
+        <h2>Your result:
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Prediction</th>
+                </tr>
+                </thead>
+                <tbody>
+                 {% for i in res %}
+                <tr>
+                    <th scope="row">{{ i }}</th>
+                    <td>{{ res|get_item:i }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </h2>{% endblock %}
 {% endblock %}
 
