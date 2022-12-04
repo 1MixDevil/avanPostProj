@@ -92,8 +92,8 @@ def index(request):
 
                 all_pos.append(res)
             last = {}
-            for j in range(0, len(all_pos)):
-                last[j] = all_pos[j]
+            for j in range(1, len(all_pos)+1):
+                last[j] = all_pos[j-1]
             df = pd.DataFrame(all_pos)
             df.to_csv('file6.csv', index=False, header=False)
             return render(request, 'neural/result.html', {"res": last})
