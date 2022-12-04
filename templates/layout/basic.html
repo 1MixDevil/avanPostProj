@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{#    <link rel="stylesheet" type="text/css"#}
+{#            href="{% static 'neural/style.css' %}"/>#}
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <title>{% block tile %} Главная {% endblock %}</title>
+</head>
+    <header>
+    </header>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-lite">
+            <img src="{% static "neural/bird.png" %}" class="bird">
+          <div class="container-fluid">
+            <a class="navbar-brand"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" id="margin_help">
+                  <a class="nav-link active" aria-current="page" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active navbar-button size btn" aria-current="page" href="{% url 'retrain' %}">Retrain NN</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active navbar-button size btn" aria-current="page" href="{% url 'index' %}">Test NN</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle navbar-button size navbar-lite active btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Our links </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://github.com/1MixDevil/">@MixDevil</a></li>
+                    <li><a class="dropdown-item" href="https://github.com/Yarosalvbud/">@Yaroslavbud</a></li>
+                    <li><a class="dropdown-item" href="https://github.com/Ask4r/">@Askar</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="https://github.com/AvanpostProjectName">Project's github</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </section>
+    {% block content %}
+    {% block test %} Try classifying your object {% endblock %}
+    {% endblock %}
+
+</body>
+</html>
+
+
+<style>
+body{
+    background: rgba(255, 224, 115, 0.35);
+}
+
+.navbar-button{
+    border-width: 0em;
+    color: black;
+}
+
+.navbar-button:hover{
+    color: white;
+    background-color: #A66500;
+}
+
+.navbar{
+    min-height: 6em;
+    background: #FFB540;
+
+}
+
+.alert-window{
+    background-color: white;
+    text-color: black;
+}
+
+.nav-item{
+    margin-left: 20px;
+}
+#margin_help{
+    #margin-left: 40%;
+}
+
+.size{
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.dropdown-item{
+    font-size: 15px;
+
+}
+
+.navbar-brand{
+    font-size: 25px;
+}
+.bird{
+    transform: rotate(10deg);
+    {#background: white;#}
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+
+</style>

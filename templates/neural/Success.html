@@ -1,0 +1,8 @@
+{% extends 'layout/basic.html' %}
+{% block title %} Проверка нейронной сети {% endblock %}
+
+
+{% block content %}
+        {% block test %} <h2>All right, you can test your neural network by clicking <a style="text-decoration: none; color: black" href="{% url "index" %}">"Test NN"</a></h2>{% endblock %}
+{% endblock %}
+
